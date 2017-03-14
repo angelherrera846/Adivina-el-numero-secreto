@@ -30,17 +30,17 @@ public class NumeroSecreto {
    
    public void setRango (int limiteInferior , int limiteSuperior){
        if(limiteInferior > limiteSuperior){
-           limiteInferior = LIM_INF_PREDET;
-           limiteSuperior = LIM_SUP_PREDET;
+           this.limiteInferior = LIM_INF_PREDET;
+           this.limiteSuperior = LIM_SUP_PREDET;
        }else{
-           limiteInferior = limiteInferior;
-           limiteSuperior = limiteSuperior;
+           this.limiteInferior = limiteInferior;
+           this.limiteSuperior = limiteSuperior;
        }
    }
    
    //Declarar el metodo generar
    
-   public void Generar (){
+   public void generar (){
        this.numero =generador.nextInt(limiteSuperior)+1;
    }
    
@@ -49,7 +49,7 @@ public class NumeroSecreto {
    public NumeroSecreto(int limiteInferior,int limiteSuperior){
        this.setRango(limiteInferior,limiteSuperior);
        this.generador= new Random();
-       this.Generar();
+       this.generar();
    }
    
    //Declare el segundo constructor sin parametros para que delegue el trabajo al primer constructor
@@ -74,7 +74,7 @@ public class NumeroSecreto {
    
    //Declarar la clase es mayor
    
-   public boolean EsMayor(int numero){
+   public boolean esMayor(int numero){
        boolean elNumeroSecretoEsMayor;
        if(this.numero > numero ){
            elNumeroSecretoEsMayor = true;
@@ -86,7 +86,7 @@ public class NumeroSecreto {
    
    //Declarar la clase es menor
    
-   public boolean EsMenor (int numero){
+   public boolean esMenor (int numero){
        boolean elNumeroSecretoEsMenor = false;
        if (this.numero < numero){
            elNumeroSecretoEsMenor = true ;
@@ -96,7 +96,7 @@ public class NumeroSecreto {
    
    //Declarar la clase es igual
    
-   public boolean EsIgual (int numero){
+   public boolean esIgual (int numero){
        return (this.numero == numero);
    }
    
